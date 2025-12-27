@@ -6,7 +6,7 @@ RUN yum -y install epel-release
 RUN /usr/bin/crb enable
 RUN yum -y install perl-PAGI #2025-12-26
 
-COPY app.pl /app/
+COPY app/ /app/
 
 WORKDIR /app
-CMD ["/usr/bin/pagi-server", "--host", "0.0.0.0", "--app", "/app/app.pl", "--port", "80"]
+CMD ["/usr/bin/pagi-server", "--host", "0.0.0.0", "--app", "/app/app.pl", "--port", "80", "--workers", "6"]
