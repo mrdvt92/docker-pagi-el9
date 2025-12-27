@@ -1,6 +1,6 @@
 IMAGE_NAME=local/pagi-server
 CONTAINER_NAME=pagi-server
-HOST_PORT=5000
+HOST_PORT=5089
 
 build:
 	docker build -t $(IMAGE_NAME) .
@@ -19,3 +19,8 @@ stop:
 
 rm:	stop
 	docker rm $(CONTAINER_NAME)
+
+firewall:
+	sudo firewall-cmd --zone=public --permanent --add-port=$(HOST_PORT)/tcp
+	sudo firewall-cmd --reload
+
