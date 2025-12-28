@@ -4,7 +4,7 @@ RUN yum -y install https://linux.davisnetworks.com/el9/updates/mrdvt92-release-8
 RUN yum -y update
 RUN yum -y install epel-release
 RUN /usr/bin/crb enable
-RUN yum -y install perl-PAGI #2025-12-26
+RUN yum -y install perl-PAGI #0.001011-2 CPAN release
 
 COPY app/ /app/
 
