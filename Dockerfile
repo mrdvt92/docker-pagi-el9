@@ -9,4 +9,4 @@ RUN yum -y install perl-PAGI #0.001011-2 CPAN release
 COPY app/ /app/
 
 WORKDIR /app
-CMD ["/usr/bin/pagi-server", "--host", "0.0.0.0", "--app", "/app/app.pl", "--port", "80", "--workers", "6"]
+CMD ["/usr/bin/pagi-server", "--host", "0.0.0.0", "--app", "/app/app.pl", "--port", "8080", "--workers", "6"]

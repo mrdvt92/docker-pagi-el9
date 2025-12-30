@@ -6,7 +6,7 @@ build:
 	docker build -t $(IMAGE_NAME) .
 
 run:
-	docker run --detach --publish $(HOST_PORT):80 --name=$(CONTAINER_NAME) $(IMAGE_NAME)
+	docker run --detach --publish $(HOST_PORT):8080 --name=$(CONTAINER_NAME) $(IMAGE_NAME)
 
 bash:
 	docker exec -it $(CONTAINER_NAME) /bin/bash || true
